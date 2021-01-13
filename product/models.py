@@ -3,12 +3,12 @@ from django.utils import timezone
 
 
 class Post(models.Model):
-    objects = None
+
     name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     productname = models.CharField(max_length=300)
     price = models.BigIntegerField()
-    stock_quatity = models.BigIntegerField()
-    description = models.TextField
+    stock_quantity = models.BigIntegerField()
+    description = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
 
 
