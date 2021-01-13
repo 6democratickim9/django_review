@@ -5,9 +5,9 @@
     <div class="col-md-8">
         <div class="post">
             <div class="date">
-                <p>Published : {{post.published_date}}</p>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.productname}}</a></h2>
             </div>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+            <p>Published : {{post.published_date}}</p>
             <p>{{post.text|linebreaksbr}}</p>
         </div>
     </div>

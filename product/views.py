@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.utils import timezone
 from requests import post
+from pathlib import Path
 
 from .models import Post
 
@@ -18,6 +19,9 @@ def post_detail(request,pk):
 # Post 목록
 
 def post_list(request):
+    print("check 01", request)
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    print(BASE_DIR, '/static')
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'product/post_list.html', {'posts': posts})
 
