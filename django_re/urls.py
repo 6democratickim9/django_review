@@ -23,6 +23,6 @@ from product import views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('',include('blog.urls')),
+    url('',include('product.urls')),
 
 ]
